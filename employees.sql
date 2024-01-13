@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 13, 2024 at 06:03 PM
+-- Generation Time: Jan 13, 2024 at 06:43 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_employees` (
   `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL,
-  `email` int(11) NOT NULL,
-  `phone` int(11) NOT NULL
+  `name` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
+  `phone` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
