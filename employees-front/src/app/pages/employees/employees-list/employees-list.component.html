@@ -1,1 +1,54 @@
-<p>employees-list works!</p>
+<div class="p-4">
+	<div class="my-2 d-flex justify-content-between">
+		<div class="fw-bold">Employees</div>
+	</div>
+
+	<div class="card mt-4">
+		<div class="card-header bg-white">
+			<div class="d-flex justify-content-between">
+				<strong class="aling-self-center">informacion</strong>
+				<div class="d-flex flex-row-reverse bd-highlight">
+					<div class="btn-group">
+						<button class="btn btn-sm ml-2"
+							type="button"
+							routerLink="/employees/create">
+							<svg xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								fill="currentColor"
+								class="bi bi-plus-circle"
+								viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+								<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-body p-2">
+
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Phone</th>
+                            <th scope="col">accions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let employees of listEmployees">
+							<td>{{employees.name}}</td>
+							<td>{{employees.email}}</td>
+							<td>{{employees.phome}}</td>
+                            <td> Editar | Eliminar </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>

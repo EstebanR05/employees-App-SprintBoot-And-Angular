@@ -11,17 +11,17 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) {}
 
-  public getByIdEmployee(id: number) {
-    const url = `${this.generalUrl}/employees/${id}`;
-    return this.http.get<any>(url).pipe(map((data) => data));
-  }
-
   public getAllEmployees() {
     const url = `${this.generalUrl}/employees`;
     return this.http.get<any>(url).pipe(map((data) => data));
   }
 
-  public saveEmployees(employees: Employees[]) {
+  public getByIdEmployee(id: number) {
+    const url = `${this.generalUrl}/employees/${id}`;
+    return this.http.get<any>(url).pipe(map((data) => data));
+  }
+
+  public saveEmployees(employees: Employees) {
     const url = `${this.generalUrl}/employees`;
     return this.http.post<any>(url, { employees });
   }

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeesManagerComponent } from './employees/employees-manager/employees-manager.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { EmployeesManagerComponent } from './employees/employees-manager/employe
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class PagesModule { }
