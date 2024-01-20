@@ -11,46 +11,26 @@ import java.util.Optional;
 
 @Service
 public class EmployeesServiceImpl implements EmployeesService {
-
     /**
      * the employees repository
      */
     @Autowired
     private IEmployeesRepository employeesRepository;
 
+    public EmployeesServiceImpl(IEmployeesRepository employeesRepository){
+        this.employeesRepository = employeesRepository;
+    }
+
     @Override
     public List<Employees> getAll() {
         return employeesRepository.findAll();
     }
-
     @Override
-    public Optional<Employees> getById(Integer id) {
-        return employeesRepository.findById(id);
-    }
-
+    public Optional<Employees> getById(Integer id) {return employeesRepository.findById(id);}
     @Override
-    public Employees save(Employees employee) {
-        return employeesRepository.save(employee);
-    }
-
+    public Employees save(Employees employee) {return employeesRepository.save(employee);}
     @Override
-    public Employees updateEmployee(Integer id, Employees employee) {
-        Employees employeeEdit = employeesRepository.findById(id).get();
-
-        employeeEdit.setEmail(employee.getEmail());
-        employeeEdit.setName(employee.getName());
-        employeeEdit.setPhone(employee.getPhone());
-
-        return employeeEdit;
-    }
-
+    public Employees updateEmployee(Employees employee) {return employeesRepository.save(employee);}
     @Override
-    public boolean detelete(Integer id) {
-        try {
-            employeesRepository.deleteById(id);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
+    public void detelete(Integer id) {employeesRepository.deleteById(id);}
 }

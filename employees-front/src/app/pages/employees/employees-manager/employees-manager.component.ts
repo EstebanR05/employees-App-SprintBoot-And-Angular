@@ -71,7 +71,7 @@ export class EmployeesManagerComponent implements OnInit {
           };
 
           this.employeesService
-            .setEmployees(parseInt(this.id), employeeEdit)
+            .setEmployees(employeeEdit)
             .subscribe();
         }
 

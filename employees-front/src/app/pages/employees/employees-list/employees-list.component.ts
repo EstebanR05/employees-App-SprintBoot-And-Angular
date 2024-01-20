@@ -45,8 +45,9 @@ export class EmployeesListComponent implements OnInit {
           text: 'Your file has been deleted.',
           icon: 'success',
         });
-        this.getAll();
       }
     });
+
+    this.getAll();
   }
 }

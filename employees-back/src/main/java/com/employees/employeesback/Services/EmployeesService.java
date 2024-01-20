@@ -9,13 +9,9 @@ import java.util.Optional;
 @Service
 public interface EmployeesService {
     List<Employees> getAll();
-
     Optional<Employees> getById(Integer id);
-
     Employees save(Employees employee);
-
-    Employees updateEmployee(Integer id, Employees employee);
-
-    boolean detelete(Integer id);
+    Employees updateEmployee(Employees employee);
+    void detelete(Integer id);
 
 }

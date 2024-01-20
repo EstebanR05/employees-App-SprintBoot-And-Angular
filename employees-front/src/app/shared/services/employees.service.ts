@@ -11,28 +11,23 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) {}
 
-  public getAllEmployees(): Observable<any> {
-    const url = `${this.generalUrl}/employees`;
-    return this.http.get<any>(url).pipe(map((data) => data));
+  public getAllEmployees(): Observable<Employees[]> {
+    return this.http.get<Employees[]>(`${this.generalUrl}/employees`).pipe(map((data) => data));
   }
 
-  public getByIdEmployee(id: number): Observable<any> {
-    const url = `${this.generalUrl}/employees/${id}`;
-    return this.http.get<any>(url).pipe(map((data) => data));
+  public getByIdEmployee(id: number): Observable<Employees> {
+    return this.http.get<Employees>(`${this.generalUrl}/employees/${id}`).pipe(map((data) => data));
   }
 
-  public saveEmployees(employees: Employees): Observable<any> {
-    const url = `${this.generalUrl}/employees`;
-    return this.http.post(url, { employees }).pipe(map((data) => data));
+  public saveEmployees(employees: Employees): Observable<Employees> {
+    return this.http.post<Employees>(`${this.generalUrl}/employees`, employees);
   }
 
-  public setEmployees(id: number, employees: Employees): Observable<any> {
-    const url = `${this.generalUrl}/employees/${id}`;
-    return this.http.put(url, { employees }).pipe(map((data) => data));
+  public setEmployees(employees: Employees): Observable<Employees> {
+    return this.http.put<Employees>(`${this.generalUrl}/employees`, employees );
   }
 
-  public deleteEmployee(id: number): Observable<any> {
-    const url = `${this.generalUrl}/employees/${id}`;
-    return this.http.delete<any>(url).pipe(map((data) => data));
+  public deleteEmployee(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.generalUrl}/employees/${id}`);
   }
 }
