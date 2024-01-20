@@ -43,7 +43,7 @@ export class EmployeesManagerComponent implements OnInit {
           this.form.patchValue({
             name: employee.name,
             email: employee.email,
-            phome: employee.phome,
+            phone: employee.phone,
           });
         });
     }
@@ -67,7 +67,7 @@ export class EmployeesManagerComponent implements OnInit {
             id: parseInt(this.id),
             name: this.form.value.name,
             email: this.form.value.email,
-            phome: this.form.value.phone,
+            phone: this.form.value.phone,
           };
 
           this.employeesService

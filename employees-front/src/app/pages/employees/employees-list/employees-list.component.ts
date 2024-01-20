@@ -13,7 +13,9 @@ export class EmployeesListComponent implements OnInit {
 
   constructor(private employeesService: EmployeesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAll();
+  }
 
   public getAll() {
     this.employeesService.getAllEmployees().subscribe(
@@ -43,6 +45,7 @@ export class EmployeesListComponent implements OnInit {
           text: 'Your file has been deleted.',
           icon: 'success',
         });
+        this.getAll();
       }
     });
   }

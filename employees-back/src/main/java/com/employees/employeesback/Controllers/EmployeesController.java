@@ -23,7 +23,7 @@ public class EmployeesController {
         return employeesService.getAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(path ="/{id}")
     public Optional<Employees> getByIdEmployee(@PathVariable("id") Integer id) {
         return employeesService.getById(id);
     }
@@ -33,12 +33,12 @@ public class EmployeesController {
         return employeesService.save(employee);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(path ="/{id}")
     public Employees setEmployees(@PathVariable("id") Integer id, @RequestBody Employees employee) {
         return employeesService.updateEmployee(id, employee);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(path ="/{id}")
     public Boolean deleteEmployee(@PathVariable("id") Integer id) {
         return employeesService.detelete(id);
     }
