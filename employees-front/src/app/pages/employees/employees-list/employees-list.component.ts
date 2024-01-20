@@ -40,6 +40,7 @@ export class EmployeesListComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.employeesService.deleteEmployee(id).subscribe();
+        this.getAll();
         Swal.fire({
           title: 'Deleted!',
           text: 'Your file has been deleted.',
@@ -48,6 +49,5 @@ export class EmployeesListComponent implements OnInit {
       }
     });
 
-    this.getAll();
   }
 }
